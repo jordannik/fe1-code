@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: verdana;
+	background-color: #0ff;
+}
+
+h1, h2, h3, h4, h5 { 
+	padding-bottom: 20px; 
+	padding-top: 10px;
+
+}
+
+h2 {
+	color: #345;
+}
+
+.secp {
+
+}
+.secp p:nth-child(2) {
+	padding: 10px;
+	color: red;
+	background-color: white;
+};
