@@ -1,13 +1,18 @@
 * {
 	margin: 0;
-	padding-left: 2px;
+	padding: 0px;
 }
 
 body {
 	background: #ccc;
+	padding: 5px;
+	counter-reset:section;
+	counter-reset:subsection;
+
 }
 
 a {
+	padding-left: 0px;
 	font-family: sans-serif;
 	font-size: 12px;
 	margin-left: 1.5em;
@@ -55,25 +60,90 @@ strong {
 }
 
 .cont {
-	position: relative;
-	width: 250px;
-	height: 250px;
+	position: left;
+	width: 250px; 
+	height: 200px; 
+	overflow: hidden; 
 	text-align: left;
-	padding: 2px;
+	padding: 50px;
 	border: 1px solid black;
 	background-color: white;
 	border-radius: 10px;
-
-	
 }
 
-ol {
-	padding: 0px;
-	list-style-type: decimal;
+.cont ol {
+	padding-left: 0px;
+	background-color: red;
+	margin: 0px;
+	line-height: 1em;
 }
-ol li ol {
-	list-style-type: decimal;
+
+.cont ol li {
+	padding-left: 0px;	
+	background-color: green;
+	padding-bottom: 0px;
+	line-height: 1em;
 }
-ol li ol li ol {
-	list-style-type: decimal;
+.cont ol li:before {
+	counter-increment:section;
+	background-color: blue;
+
 }
+
+.cont ol li ol {
+/*	counter-increment:subsection;
+*/
+}
+.cont ol li ol li {
+	content: counter(section) "." counter(subsection);
+	background-color: orange;
+	padding-left: 0px;	
+	margin: 0px;
+	list-style-type: decimal;
+	line-height: 1em;
+}
+.cont ol li ol li:before {
+	content: counter(section) "." counter(subsection);
+	counter-increment:subsection;
+	background-color: yellow;
+	padding-left: 10px;	
+	margin: 0px;
+	list-style-type: decimal;
+	line-height: 1em;
+}
+
+/*.cont ol li ol:before {
+	counter-increment:subsection;
+
+}*/
+/*h1 {
+  counter-reset: section;
+}
+h2:before {
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+
+ol#page_one { counter-reset: item 0;}
+ol#page_two { counter-reset: item 5;}
+li { display: block }
+li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    display:block;
+}
+
+.ff ol { counter-reset: item 12;
+		background-color: yellow;
+}
+.ff ol li { counter-reset: item 57;
+		background-color: yellow;
+}
+
+.ss ol{ counter-reset: item 2 }
+ol li { display: block }
+ol li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
+    display:block;
+}*/
